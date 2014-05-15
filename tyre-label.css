@@ -2,12 +2,19 @@
     position: relative;
 }
 
+/**
+ * You can either scale the images using image manipulation or uncomment
+ * the CSS in both this and the overlay classes to alter the height
+ * of the label.
+ */
 .tyre-label-base {
+    /* height: 280px; */
     position: relative;
     z-index: 0;
 }
 
 .tyre-label-overlay {
+    /* height: 280px; */
     position: absolute;
     z-index: 1;
     top:0;
