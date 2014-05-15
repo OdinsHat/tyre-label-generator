@@ -1,0 +1,15 @@
+.tyre-label-container {
+    position: relative;
+}
+
+.tyre-label-base {
+    position: relative;
+    z-index: 0;
+}
+
+.tyre-label-overlay {
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left:0;
+}
