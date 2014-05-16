@@ -10,7 +10,7 @@
 
 ## Example Output
 
-![Example Tyre Label](https://raw.githubusercontent.com/OdinsHat/tyre-label-generator/master/tyre-label-ex.png)
+![Example Tyre Label](https://raw.githubusercontent.com/OdinsHat/tyre-label-generator/master/images/tyre-label-ex.png)
 
 _The above was generated (then screenshot) using the genHtmlLabel method of the class_
 
@@ -35,11 +35,11 @@ The outputted HTML would look something like this:
 
 ```html
 <div style="position:relative">
-    <img src="/images/label/bg.png" alt="Label Background" style="position:relative; z-index:0;" />
-    <img src="/images/label/fuel_f.png" alt="Fuel" style="position:absolute;z-index:1" />
-    <img src="/images/label/wet_e.png" alt="Wet Grip" style="position:absolute;z-index:1" />
-    <img src="/images/label/db_71.png" alt="Noise Db" style="position:absolute;z-index:1" />
-    <img src="/images/label/sw_2.png" alt="Wet Grip" style="position:absolute;z-index:1" />
+    <img src="/images/label/bg.png" alt="EU tyre Label" style="position:relative; z-index:0;" />
+    <img src="/images/label/fuel_f.png" style="position:absolute;z-index:1" />
+    <img src="/images/label/wet_e.png" style="position:absolute;z-index:1" />
+    <img src="/images/label/db_71.png" style="position:absolute;z-index:1" />
+    <img src="/images/label/sw_2.png" style="position:absolute;z-index:1" />
 </div>
 ```
 
@@ -55,11 +55,24 @@ echo $label->genCssLabel();
 
 ```html
 <div class="tyre-label-container">
-    <img src="/images/label/bg.png" alt="Label Background" class="tyre-label-base" />
-    <img src="/images/label/fuel_f.png" alt="Fuel" class="tyre-label-overlay" />
-    <img src="/images/label/wet_e.png" alt="Wet Grip" class="tyre-label-overlay" />
-    <img src="/images/label/db_71.png" alt="Noise Db" class="tyre-label-overlay" />
-    <img src="/images/label/sw_2.png" alt="Wet Grip" class="tyre-label-overlay" />
+    <img src="/images/label/bg.png" alt="EU Tyre Label" class="tyre-label-base" />
+    <img src="/images/label/fuel_f.png" class="tyre-label-overlay" />
+    <img src="/images/label/wet_e.png" class="tyre-label-overlay" />
+    <img src="/images/label/db_71.png" class="tyre-label-overlay" />
+    <img src="/images/label/sw_2.png" class="tyre-label-overlay" />
 </div>
 ```
 
+### 3. PNG Generated Image
+
+Todo - this will generate a single image file in PNG format using the GD library.
+
+## Testing
+
+Couple of basic tests are done using PHPUnit. To run them grab the repo and run phpunit on the ```tests``` folder:
+
+```
+git clone git@github.com:OdinsHat/tyre-label-generator.git
+cd tyre-label-generator
+phpunit tests
+```
