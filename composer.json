@@ -1,4 +1,25 @@
 {
+    "name": "odinshat/tyre-label-generator",
+    "description": "A simple PHP class for creating EU Tyre labels",
+    "type": "library",
+    "keywords": ["tyre", "tire", "images", "image generator", "eu", "regulations"],
+    "homepage": "https://github.com/OdinsHat/tyre-label-generator",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Doug Bromley",
+            "email": "doug@tintophat.com",
+            "homepage": "https://github.com/OdinsHat/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/OdinsHat/tyre-label-generator/issues",
+        "source": "https://github.com/OdinsHat/tyre-label-generator"
+    },
+    "require": {
+        "php": ">=5.1.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "4.1.*"
     }
