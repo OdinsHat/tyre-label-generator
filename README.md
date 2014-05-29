@@ -14,6 +14,21 @@
 
 _The above was generated (then screenshot) using the genHtmlLabel method of the class_
 
+## Installoation
+
+Can now be installed as part of composer. Add it to your ```composer.json``` file 
+with this as a dependency:
+
+```"odinshat/tyre-label-generator": "dev-master"```
+
+And run:
+
+```composer install```
+
+Or simply:
+
+```git clone https://github.com/OdinsHat/tyre-label-generator.git```
+
 ## Usage
 
 There are multiple methods implemented in the class and you can use whichever suits yur needs most.
