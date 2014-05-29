@@ -12,8 +12,6 @@
  * @license BSD
  */
 
-namespace tyretools;
-
 class TyreLabel
 {
     private $images_dir;
