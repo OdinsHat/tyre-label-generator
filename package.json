@@ -1,0 +1,42 @@
+{
+  "name": "tyre-label-generator",
+  "version": "0.5.0",
+  "description": "A simple class for creating EU Tyre labels",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/OdinsHat/tyre-label-generator.git"
+  },
+  "keywords": [
+    "eu",
+    "tyre",
+    "tire",
+    "tyre",
+    "label",
+    "tire",
+    "label",
+    "tyre",
+    "labelling",
+    "tire",
+    "labelling"
+  ],
+  "author": "Doug Bromley",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/OdinsHat/tyre-label-generator/issues"
+  },
+  "homepage": "https://github.com/OdinsHat/tyre-label-generator",
+  "devDependencies": {
+    "grunt-phpcs": "^0.2.2",
+    "grunt": "^0.4.5",
+    "grunt-phpmd": "^0.1.0",
+    "grunt-phplint": "0.0.5",
+    "grunt-contrib-jshint": "^0.10.0"
+  }
+}
