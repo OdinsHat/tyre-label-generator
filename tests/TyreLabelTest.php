@@ -1,4 +1,5 @@
 <?php
+
 require('TyreLabel.php');
 
 class TyreLabelTest extends PHPUnit_Framework_TestCase
@@ -67,5 +68,3 @@ class TyreLabelTest extends PHPUnit_Framework_TestCase
         print $label->genCssLabel();
     }
 }
-
-?>

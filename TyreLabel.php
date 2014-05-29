@@ -12,7 +12,6 @@
  * @license BSD
  */
 
-
 class TyreLabel
 {
     private $images_dir;
@@ -36,7 +35,7 @@ class TyreLabel
      *
      * @todo add validation to given parameters
      */
-    public function __construct($fuel, $wet, $noise_db, $noise_class, $height=280, $images = '/images')
+    public function __construct($fuel, $wet, $noise_db, $noise_class, $height = 280, $images = '/images')
     {
         $this->images_dir = $images;
         $this->fuel = strtolower($fuel);
@@ -127,4 +126,3 @@ class TyreLabel
 
     }
 }
-?>
