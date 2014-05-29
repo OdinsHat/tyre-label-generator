@@ -8,10 +8,14 @@ module.exports = function(grunt) {
         },
         phpcs: {
             options: {
-                standard: 'PSR2'
+                ignoreExitCode: true,
+                standard: 'PSR1'
             },
             tl: {
-                dir: ['TyreLabel.php']
+                dir: ['TyreLabel.php'],
+                options: {
+                    standard: 'PSR1'
+                }
             },
             tests: {
                 dir: ['tests/*.php'],
