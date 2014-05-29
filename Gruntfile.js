@@ -46,5 +46,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.registerTask('default', ['phplint:all']);
-    grunt.registerTask('full', ['jshint', 'phplint', 'phpcs', 'phpmd']);
+    grunt.registerTask('full', ['jshint', 'phplint', 'phpmd', 'phpcs']);
 };
