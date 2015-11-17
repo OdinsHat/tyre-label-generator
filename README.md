@@ -14,7 +14,7 @@
 
 _The above was generated (then screenshot) using the genHtmlLabel method of the class_
 
-## Installoation
+## Installation
 
 Can now be installed as part of composer. Add it to your ```composer.json``` file 
 with this as a dependency:
