@@ -1,6 +1,6 @@
 {
   "name": "tyre-label-generator",
-  "version": "0.5.0",
+  "version": "1.1",
   "description": "A simple class for creating EU Tyre labels",
   "main": "index.js",
   "directories": {
