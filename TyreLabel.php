@@ -123,6 +123,35 @@ class TyreLabel
      */
     public function genPngLabel()
     {
+        $image = imagecreatefrompng(
+            sprintf(
+                "%s/bg.png",
+                $this->images_dir
+            )
+        );
 
+        $image = self::overlayGdImage('fuel', $this->fuel, $image); 
+        $image = self::overlayGdImage('wet', $this->wet, $image);
+        $image = self::overlayGdImage('db', $this->noise_db, $image);
+        $image = self::overlayGdImage('sw', $this->sw, $image);
+
+        return $image;
+    }
+
+    private function overlayGdImage($type, $val, $image)
+    {
+
+        $src = imagecreatefrompng(
+            sprintf(
+                "%s/%s_%s.png",
+                $this->images_dir,
+                $type,
+                $val
+            )
+        );
+
+        imagecopy($image, $src, 0, 0, 0, 0, imagesx($src), imagesy($src)); 
+
+        return $image;
     }
 }
