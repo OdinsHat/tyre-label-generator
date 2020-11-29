@@ -71,7 +71,14 @@ echo $label->genCssLabel();
 
 ### 3. PNG Generated Image
 
-Todo - this will generate a single image file in PNG format using the GD library.
+```php
+$image = new TyreLabel('F', 'E', 71, 2,280,"images/");
+$image = $image->genPngLabel();
+header('Content-type: image/png');
+imagepng($image);
+imagedestroy($image);
+die;
+```
 
 ## Testing
 
