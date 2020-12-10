@@ -1,5 +1,7 @@
 # Tyre Label Generator
 
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/OdinsHat/tyre-label-generator/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 ### Background
 
 * In the EU tyre labelling went into effect from 1st November 2012.
