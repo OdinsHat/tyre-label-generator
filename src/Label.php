@@ -101,7 +101,7 @@ class Label
             )
         );
 
-        $image = self::overlayGdImage('fuel', $this->fuel, $image); 
+        $image = self::overlayGdImage('fuel', $this->fuel, $image);
         $image = self::overlayGdImage('wet', $this->wet, $image);
         $image = self::overlayGdImage('db', $this->noise_db, $image);
         $image = self::overlayGdImage('sw', $this->sw, $image);
