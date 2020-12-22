@@ -8,7 +8,7 @@ class EuTyreLabel
     private $fuel;
     private $wet;
     private $noise_db;
-    private $noise_class;
+    private $sw;
 
     /**
      * Initialise the class with the tyre label parameters and the folder
