@@ -8,14 +8,14 @@ class Label
     private $height;
     private $width;
 
-    public function __construct(Tyre $tyre, int $width, int $height)
+    public function __construct(Tyre $tyre, int $height = 280, string $images = '/images')
     {
         $this->tyre = $tyre;
-        $this->width = $width;
         $this->height = $height;
+        $this->images = $images;
     }
 
-        /**
+    /**
      * Generates a Tyre Label using inline CSS
      *
      * This isn't the recommended method but it is the easiest if you want to
@@ -54,7 +54,7 @@ class Label
 
     /**
      * Generates a tyre label using CSS classes - for this to work the
-     * included CSS file must belinked in your page or the classes inside
+     * included CSS file must be linked in your page or the classes inside
      * it placed in your CSS.
      *
      * @return string HTML representation of an EU tyre label
@@ -89,8 +89,9 @@ class Label
     }
 
     /**
-     * @todo complete this
-     * @return [type] [description]
+     * Generates a PNG label from the component parts found in the images directory
+     *
+     * @return binary the PNG image
      */
     public function genPngLabel()
     {
@@ -109,6 +110,10 @@ class Label
         return $image;
     }
 
+    /**
+     * Method used for building the over layed image by taking arguments for which
+     * variables and thereby which images to use
+     */
     private function overlayGdImage($type, $val, $image)
     {
 
