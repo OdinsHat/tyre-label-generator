@@ -2,12 +2,24 @@
 
 namespace OdinsHat\EuTyreLabel;
 
+use Tyre;
+
+/**
+ * Undocumented class
+ */
 class Label
 {
-    private $tyre;
-    private $height;
-    private $width;
+    protected $tyre;
+    protected $height;
+    protected $images;
 
+    /**
+     * Undocumented function
+     *
+     * @param Tyre $tyre
+     * @param integer $height
+     * @param string $images
+     */
     public function __construct(Tyre $tyre, int $height = 280, string $images = '/images')
     {
         $this->tyre = $tyre;
@@ -126,7 +138,7 @@ class Label
             )
         );
 
-        imagecopy($image, $src, 0, 0, 0, 0, imagesx($src), imagesy($src)); 
+        imagecopy($image, $src, 0, 0, 0, 0, imagesx($src), imagesy($src));
 
         return $image;
     }
