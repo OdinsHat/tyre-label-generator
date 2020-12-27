@@ -4,11 +4,7 @@
 
 ### Background
 
-* In the EU tyre labelling went into effect from 1st November 2012.
-* A number of sites use varying methods to generate these labels dynamically.
-* This class was originally developed by me as an extension of a site I built
-  that used the [Yii Framework](http://www.yiiframework.com).
-* I abstracted it out of my extended CHtml class into its own class.
+In the EU tyre labelling went into effect from 1st November 2012. This is a PHP library capable of generating images and HTML/CSS stacked images of EU tyre labels. EU tyre lavbel design hasn't changed since 2012 so this library is still valid as of 2020.
 
 ## Example Output
 
@@ -21,6 +17,21 @@ _The above was generated (then screenshot) using the genHtmlLabel method of the 
 The easiest way is to simply use composer to require the package:
 
 ```composer require odinshat/tyre-label-generator```
+
+However, you can choose one of 2 versions dependent on your requirements. 
+
+* The PHP7+ version which is [version 2.0+](https://github.com/OdinsHat/tyre-label-generator/tree/v2.0.0) 
+* The PHP5.4-compatible version whose [latest working version was v1.2](https://github.com/OdinsHat/tyre-label-generator/tree/v1.2)
+
+## Testing
+
+Version 2.0+ which is the PHP7 version of the library comes with a full suite of tests which you can run using PHPUnit:
+
+```
+git clone git@github.com:OdinsHat/tyre-label-generator.git
+cd tyre-label-generator
+phpunit tests/
+```
 
 ## Usage
 
@@ -35,7 +46,8 @@ going.
 E.g.
 
 ```php
-$label = new TyreLabel('F', 'E', 71, 2);
+$tyre = new Tyre('F', 'E', 71, 2);
+$label = new Label($tyre);
 echo $label->genHtmlLabel();
 ```
 
@@ -57,7 +69,8 @@ This will require you to include the provided CSS file ```tyre-label.css```
 somewhere in your page or add its styles to your own.
 
 ```php
-$label = new TyreLabel('F', 'E', 71, 2);
+$tyre = new Tyre('F', 'E', 71, 2);
+$label = new Label($tyre, 300, '/imgs');
 echo $label->genCssLabel();
 ```
 
@@ -74,20 +87,11 @@ echo $label->genCssLabel();
 ### 3. PNG Generated Image
 
 ```php
-$image = new TyreLabel('F', 'E', 71, 2,280,"images/");
-$image = $image->genPngLabel();
+$tyre = new Tyre('F', 'E', 71, 2,280,"images/");
+$label = new Label($tyre, 250); 
+$image = $label->genPngLabel();
 header('Content-type: image/png');
 imagepng($image);
 imagedestroy($image);
-die;
-```
-
-## Testing
-
-Couple of basic tests are done using PHPUnit. To run them grab the repo and run phpunit on the ```tests``` folder:
-
-```
-git clone git@github.com:OdinsHat/tyre-label-generator.git
-cd tyre-label-generator
-phpunit tests
+die();
 ```
