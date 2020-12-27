@@ -1,6 +1,5 @@
 language: php
 php:
-  - '7.2'
   - '7.3'
 
 branches:
@@ -13,4 +12,4 @@ before_install:
   - composer install
 
 script:
-  - phpunit tests/
+  - vendor/bin/phpunit tests/
