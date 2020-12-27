@@ -1,13 +1,10 @@
 <?php
 
-namespace OdinsHat\EuTyreLabel;
-
-use OdinsHat\EuTyreLabel\Tyre;
+namespace OdinsHat\TyreLabelGenerator;
 
 /**
  * Label class will build an EU standard tyre label using a Tyre object
- * provided during its initialisation. Or you can create a basic tyre
- * label using a dictionary array for speed and reduced memory usage.
+ * provided during its initialisation.
  */
 class Label
 {
@@ -16,19 +13,37 @@ class Label
     protected $images;
 
     /**
-     * Undocumented function
+     * Constructor function for accepting a tyre object as well as 2 optional arguments for
+     * customising the label as the user sees fit.
      *
      * @param Tyre $tyre
-     * @param integer $height
+     * @param int $height
      * @param string $images
      */
-    public function __construct(Tyre $tyre, array $simpleTyre = [], int $height = 280, string $images = '/images')
+    public function __construct(Tyre $tyre, int $height = 280, string $images = '/images')
     {
-        if (count($simpleTyre) > 0) {
-
-        }
         $this->tyre = $tyre;
         $this->height = $height;
+        $this->images = $images;
+    }
+
+    public function getImagesDir(): string
+    {
+        return $this->images;
+    }
+
+    public function getHeight(): int
+    {
+        return $this->height;
+    }
+
+    public function setHeight(int $height)
+    {
+        $this->height = $height;
+    }
+
+    public function setImagesDir(string $images)
+    {
         $this->images = $images;
     }
 
@@ -48,12 +63,12 @@ class Label
 
         $label .= sprintf(
             '<img src="%s/bg.png" alt="EU tyre Label" style="position:relative; z-index:0;" />',
-            $this->images_dir
+            $this->images
         );
-        $label .= self::overlayHtmlImage('fuel', $this->fuel);
-        $label .= self::overlayHtmlImage('wet', $this->wet);
-        $label .= self::overlayHtmlImage('db', $this->noise_db);
-        $label .= self::overlayHtmlImage('sw', $this->sw);
+        $label .= $this->overlayHtmlImage('fuel', $this->tyre->getFuel());
+        $label .= $this->overlayHtmlImage('wet', $this->tyre->getWet());
+        $label .= $this->overlayHtmlImage('db', $this->tyre->getNoiseDb());
+        $label .= $this->overlayHtmlImage('sw', $this->tyre->getNoiseClass());
         $label .= '</div>';
 
         return $label;
@@ -63,7 +78,7 @@ class Label
     {
         return sprintf(
             '<img src="%s/%s_%s.png" style="position:absolute;top:0;left:0;z-index:1" />',
-            $this->images_dir,
+            $this->images,
             $type,
             $val
         );
@@ -84,12 +99,12 @@ class Label
 
         $label .= sprintf(
             '<img src="%s/bg.png" alt="EU Tyre Label" class="tyre-label-base" />',
-            $this->images_dir
+            $this->images
         );
-        $label .= self::overlayCssImage('fuel', $this->fuel);
-        $label .= self::overlayCssImage('wet', $this->wet);
-        $label .= self::overlayCssImage('db', $this->noise_db);
-        $label .= self::overlayCssImage('sw', $this->sw);
+        $label .= $this->overlayCssImage('fuel', $this->tyre->getFuel());
+        $label .= $this->overlayCssImage('wet', $this->tyre->getWet());
+        $label .= $this->overlayCssImage('db', $this->tyre->getNoiseDb());
+        $label .= $this->overlayCssImage('sw', $this->tyre->getNoiseClass());
         $label .= '</div>';
 
         return $label;
@@ -107,8 +122,6 @@ class Label
 
     /**
      * Generates a PNG label from the component parts found in the images directory
-     *
-     * @return binary the PNG image
      */
     public function genPngLabel()
     {
@@ -119,10 +132,10 @@ class Label
             )
         );
 
-        $image = self::overlayGdImage('fuel', $this->fuel, $image);
-        $image = self::overlayGdImage('wet', $this->wet, $image);
-        $image = self::overlayGdImage('db', $this->noise_db, $image);
-        $image = self::overlayGdImage('sw', $this->sw, $image);
+        $image = $this->overlayGdImage('fuel', $this->fuel, $image);
+        $image = $this->overlayGdImage('wet', $this->wet, $image);
+        $image = $this->overlayGdImage('db', $this->noise_db, $image);
+        $image = $this->overlayGdImage('sw', $this->sw, $image);
 
         return $image;
     }
@@ -130,10 +143,13 @@ class Label
     /**
      * Method used for building the over layed image by taking arguments for which
      * variables and thereby which images to use
+     *
+     * @param string $type
+     * @param string $val
+     * @param string $image
      */
-    private function overlayGdImage($type, $val, $image)
+    private function overlayGdImage(string $type, string $val, string $image)
     {
-
         $src = imagecreatefrompng(
             sprintf(
                 "%s/%s_%s.png",
