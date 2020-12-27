@@ -1,8 +1,10 @@
 <?php
+/*
+namespace OdinsHat\TyreLabelGenerator;
 
-namespace OdinsHat\EuTyreLabel;
+use PHPUnit\Framework\TestCase;
 
-class TyreLabelTest extends PHPUnit_Framework_TestCase
+class TyreLabelTest extends TestCase
 {
     public function testFilesExist()
     {
@@ -68,3 +70,4 @@ class TyreLabelTest extends PHPUnit_Framework_TestCase
         print $label->genCssLabel();
     }
 }
+*/
