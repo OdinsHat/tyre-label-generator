@@ -22,6 +22,21 @@ The easiest way is to simply use composer to require the package:
 
 ```composer require odinshat/tyre-label-generator```
 
+However, you can choose one of 2 versions dependent on your requirements. 
+
+* The PHP7+ version which is version 2.0+ 
+* The PHP5.4-compatible version whose [latest working version was v1.2](https://github.com/OdinsHat/tyre-label-generator/tree/v1.2)
+
+## Testing
+
+Version 2.0+ which is the PHP7 version of the library comes with a full suite of tests which you can run using PHPUnit:
+
+```
+git clone git@github.com:OdinsHat/tyre-label-generator.git
+cd tyre-label-generator
+phpunit tests/
+```
+
 ## Usage
 
 There are multiple methods implemented in the class and you can use whichever suits yur needs most.
@@ -35,7 +50,8 @@ going.
 E.g.
 
 ```php
-$label = new TyreLabel('F', 'E', 71, 2);
+$tyre = new Tyre('F', 'E', 71, 2);
+$label = new Label($tyre);
 echo $label->genHtmlLabel();
 ```
 
@@ -57,7 +73,8 @@ This will require you to include the provided CSS file ```tyre-label.css```
 somewhere in your page or add its styles to your own.
 
 ```php
-$label = new TyreLabel('F', 'E', 71, 2);
+$tyre = new Tyre('F', 'E', 71, 2);
+$label = new Label($tyre, 300, '/imgs');
 echo $label->genCssLabel();
 ```
 
@@ -74,20 +91,11 @@ echo $label->genCssLabel();
 ### 3. PNG Generated Image
 
 ```php
-$image = new TyreLabel('F', 'E', 71, 2,280,"images/");
-$image = $image->genPngLabel();
+$tyre = new Tyre('F', 'E', 71, 2,280,"images/");
+$label = new Label($tyre, 250); 
+$image = $label->genPngLabel();
 header('Content-type: image/png');
 imagepng($image);
 imagedestroy($image);
-die;
-```
-
-## Testing
-
-Couple of basic tests are done using PHPUnit. To run them grab the repo and run phpunit on the ```tests``` folder:
-
-```
-git clone git@github.com:OdinsHat/tyre-label-generator.git
-cd tyre-label-generator
-phpunit tests
+die();
 ```
