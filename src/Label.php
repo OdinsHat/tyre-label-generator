@@ -110,11 +110,11 @@ class Label
         return $label;
     }
 
-    private function overlayCssImage($type, $val): string
+    private function overlayCssImage(string $type, string $val): string
     {
         return sprintf(
             '<img src="%s/%s_%s.png" class="tyre-label-overlay" />',
-            $this->images_dir,
+            $this->images,
             $type,
             strtolower($val)
         );
