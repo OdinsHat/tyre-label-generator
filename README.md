@@ -4,11 +4,7 @@
 
 ### Background
 
-* In the EU tyre labelling went into effect from 1st November 2012.
-* A number of sites use varying methods to generate these labels dynamically.
-* This class was originally developed by me as an extension of a site I built
-  that used the [Yii Framework](http://www.yiiframework.com).
-* I abstracted it out of my extended CHtml class into its own class.
+In the EU tyre labelling went into effect from 1st November 2012. This is a PHP library capable of generating images and HTML/CSS stacked images of EU tyre labels. EU tyre lavbel design hasn't changed since 2012 so this library is still valid as of 2020.
 
 ## Example Output
 
