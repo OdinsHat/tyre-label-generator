@@ -13,10 +13,11 @@ class Label
     protected $images;
 
     /**
-     * Undocumented function
+     * Constructor function for accepting a tyre object as well as 2 optional arguments for
+     * customising the label as the user sees fit.
      *
      * @param Tyre $tyre
-     * @param integer $height
+     * @param int $height
      * @param string $images
      */
     public function __construct(Tyre $tyre, int $height = 280, string $images = '/images')
@@ -26,22 +27,22 @@ class Label
         $this->images = $images;
     }
 
-    public function getImagesDir()
+    public function getImagesDir(): string
     {
         return $this->images;
     }
 
-    public function getHeight()
+    public function getHeight(): int
     {
         return $this->height;
     }
 
-    public function setHeight($height)
+    public function setHeight(int $height)
     {
         $this->height = $height;
     }
 
-    public function setImagesDir($images)
+    public function setImagesDir(string $images)
     {
         $this->images = $images;
     }
@@ -121,8 +122,6 @@ class Label
 
     /**
      * Generates a PNG label from the component parts found in the images directory
-     *
-     * @return binary the PNG image
      */
     public function genPngLabel()
     {
@@ -144,10 +143,13 @@ class Label
     /**
      * Method used for building the over layed image by taking arguments for which
      * variables and thereby which images to use
+     *
+     * @param string $type
+     * @param string $val
+     * @param string $image
      */
-    private function overlayGdImage($type, $val, $image)
+    private function overlayGdImage(string $type, string $val, string $image)
     {
-
         $src = imagecreatefrompng(
             sprintf(
                 "%s/%s_%s.png",
