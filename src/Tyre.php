@@ -2,8 +2,10 @@
 
 namespace OdinsHat\TyreLabelGenerator;
 
+
 /**
- * Undocumented class
+ * The tyre class has all the values that represent the tyre required to build an EU standardised tyre label. This
+ * object is given to the label class in order to create the tyre label.
  */
 class Tyre
 {
