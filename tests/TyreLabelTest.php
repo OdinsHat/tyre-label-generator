@@ -1,6 +1,6 @@
 <?php
 
-require('TyreLabel.php');
+namespace OdinsHat\EuTyreLabel;
 
 class TyreLabelTest extends PHPUnit_Framework_TestCase
 {

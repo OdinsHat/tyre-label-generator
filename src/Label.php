@@ -1,6 +1,6 @@
 <?php
 
-namespace OdinsHat\EuTyreLabel;
+namespace OdinsHat\TyreLabelGenerator;
 
 use OdinsHat\EuTyreLabel\Tyre;
 

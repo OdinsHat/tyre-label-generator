@@ -1,6 +1,6 @@
 <?php
 
-namespace OdinsHat\EuTyreLabel;
+namespace OdinsHat\TyreLabelGenerator;
 
 /**
  * Undocumented class
