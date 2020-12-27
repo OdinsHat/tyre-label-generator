@@ -24,7 +24,7 @@ The easiest way is to simply use composer to require the package:
 
 However, you can choose one of 2 versions dependent on your requirements. 
 
-* The PHP7+ version which is version 2.0+ 
+* The PHP7+ version which is [version 2.0+](https://github.com/OdinsHat/tyre-label-generator/tree/v2.0.0) 
 * The PHP5.4-compatible version whose [latest working version was v1.2](https://github.com/OdinsHat/tyre-label-generator/tree/v1.2)
 
 ## Testing
