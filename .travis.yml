@@ -13,4 +13,4 @@ before_install:
   - composer install
 
 script:
-  - phpunit tests/qgit a
+  - phpunit tests/
