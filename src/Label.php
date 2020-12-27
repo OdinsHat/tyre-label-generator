@@ -2,10 +2,12 @@
 
 namespace OdinsHat\EuTyreLabel;
 
-use Tyre;
+use OdinsHat\EuTyreLabel\Tyre;
 
 /**
- * Undocumented class
+ * Label class will build an EU standard tyre label using a Tyre object
+ * provided during its initialisation. Or you can create a basic tyre
+ * label using a dictionary array for speed and reduced memory usage.
  */
 class Label
 {
@@ -20,8 +22,11 @@ class Label
      * @param integer $height
      * @param string $images
      */
-    public function __construct(Tyre $tyre, int $height = 280, string $images = '/images')
+    public function __construct(Tyre $tyre, array $simpleTyre = [], int $height = 280, string $images = '/images')
     {
+        if (count($simpleTyre) > 0) {
+
+        }
         $this->tyre = $tyre;
         $this->height = $height;
         $this->images = $images;
