@@ -35,6 +35,6 @@ class LabelTest extends TestCase
     {
         $tyre = new Tyre('F', 'E', 71, 2);
         $label = new Label($tyre, 300, '/imgs');
-        $this->assertEquals('/imgs', $label->getImagesDir());
+        $this->assertEquals('/imgs', $label->getImagesDir(), 'The provided imgs directory isnt the one reported in the test');
     }
 }
