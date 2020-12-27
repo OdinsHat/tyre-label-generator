@@ -10,20 +10,16 @@ use PHPUnit\Framework\TestCase;
 
 class LabelTest extends TestCase
 {
-
     public function testTyre()
     {
-
     }
 
     public function testHtmlImage()
     {
-
     }
 
     public function testCssImage()
     {
-
     }
 
     public function testHeightProvided()

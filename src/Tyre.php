@@ -2,7 +2,6 @@
 
 namespace OdinsHat\TyreLabelGenerator;
 
-
 /**
  * The tyre class has all the values that represent the tyre required to build an EU standardised tyre label. This
  * object is given to the label class in order to create the tyre label.
@@ -32,7 +31,7 @@ class Tyre
         $this->validFuel = range('A', 'G');
         $this->validWet = range('A', 'G');
         $this->validNoiseDb = range(50, 100);
-        $this->validNoiseClass = range(1,3);
+        $this->validNoiseClass = range(1, 3);
 
         $this->fuel = strtoupper($fuel);
         if (!in_array($this->fuel, $this->validFuel)) {
@@ -59,7 +58,7 @@ class Tyre
      * Get the value of fuel
      *
      * @return string
-     */ 
+     */
     public function getFuel(): string
     {
         return $this->fuel;
@@ -69,7 +68,7 @@ class Tyre
      * Set the value of fuel
      *
      * @return  self
-     */ 
+     */
     public function setFuel($fuel)
     {
         $this->fuel = strtoupper($fuel);
@@ -85,7 +84,7 @@ class Tyre
      * Get the value of wet
      *
      * @return string
-     */ 
+     */
     public function getWet(): string
     {
         return $this->wet;
@@ -95,12 +94,12 @@ class Tyre
      * Set the value of wet
      *
      * @return  self
-     */ 
+     */
     public function setWet($wet)
     {
         $this->wet = strtoupper($wet);
         $valid = range('A', 'G');
-        if (!in_array($this->wet, $this->validWet)){
+        if (!in_array($this->wet, $this->validWet)) {
             throw new \Exception('Invalid Wet class given');
         }
 
@@ -111,7 +110,7 @@ class Tyre
      * Get the value of noiseDb
      *
      * @return int
-     */ 
+     */
     public function getNoiseDb(): int
     {
         return $this->noiseDb;
@@ -121,7 +120,7 @@ class Tyre
      * Set the value of noiseDb
      *
      * @return  self
-     */ 
+     */
     public function setNoiseDb($noiseDb)
     {
         $this->noiseDb = $noiseDb;
@@ -136,7 +135,7 @@ class Tyre
      * Get the value of noiseClass
      *
      * @return string
-     */ 
+     */
     public function getNoiseClass(): string
     {
         return $this->noiseClass;
@@ -146,7 +145,7 @@ class Tyre
      * Set the value of noiseClass
      *
      * @return  self
-     */ 
+     */
     public function setNoiseClass($noiseClass)
     {
         $this->noiseClass = $noiseClass;
