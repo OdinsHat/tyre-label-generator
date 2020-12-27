@@ -5,3 +5,4 @@ protected/runtime/*
 protected/data/*.db
 themes/classic/views/
 node_modules
+.idea
