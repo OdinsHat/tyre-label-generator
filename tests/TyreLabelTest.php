@@ -1,9 +1,16 @@
 <?php
-/*
+
 namespace OdinsHat\TyreLabelGenerator;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class TyreLabelTest
+ *
+ * Combined integration testing suite that covers both Tyre and Label combined.
+ *
+ * @package OdinsHat\TyreLabelGenerator
+ */
 class TyreLabelTest extends TestCase
 {
     public function testFilesExist()
@@ -29,45 +36,43 @@ class TyreLabelTest extends TestCase
         $this->assertFileExists("$dir/sw_2.png");
     }
 
-    public function testNoInlineStyleInCssGen()
-    {
-        $label = new TyreLabel('F', 'E', 71, 2, '280', '/label');
-        $this->assertNotContains('style=', $label->genCssLabel());
-    }
-
     public function testCorrectPathInserted()
     {
-        $label = new TyreLabel('F', 'E', 71, 2, '280', '/blahlabelimages');
-        $this->assertContains('/blahlabelimages', $label->genCssLabel());
-        $this->assertContains('/blahlabelimages', $label->genHtmlLabel());
+        $tyre = new Tyre('F', 'E', 71, 2);
+        $label = new Label($tyre, 280, '/blahlabelimages');
+        $this->assertStringContainsString('/blahlabelimages', $label->genCssLabel());
+        $this->assertStringContainsString('/blahlabelimages', $label->genHtmlLabel());
     }
 
     public function testFuelClassImageCorrect()
     {
-        $label = new TyreLabel('F', 'E', 71, 2, '280', '/blahlabelimages');
-        $this->assertContains('fuel_f.png', $label->genCssLabel());
-        $this->assertContains('fuel_f.png', $label->genHtmlLabel());
+        $tyre = new Tyre('F', 'E', 71, 2);
+        $label = new Label($tyre, '280', '/blahlabelimages');
+        $this->assertStringContainsString('fuel_f.png', $label->genCssLabel());
+        $this->assertStringContainsString('fuel_f.png', $label->genHtmlLabel());
     }
 
     public function testWetGripClassimageCorrect()
     {
-        $label = new TyreLabel('F', 'E', 71, 2, '280', '/blahlabelimages');
-        $this->assertContains('wet_e.png', $label->genCssLabel());
-        $this->assertContains('wet_e.png', $label->genHtmlLabel());
+        $tyre = new Tyre('F', 'E', 71, 2);
+        $label = new Label($tyre, '280', '/blahlabelimages');
+        $this->assertStringContainsString('wet_e.png', $label->genCssLabel());
+        $this->assertStringContainsString('wet_e.png', $label->genHtmlLabel());
     }
 
     public function testHtmlTyreLabel()
     {
         $this->expectOutputString('<div style="position:relative"><img src="/label/bg.png" alt="EU tyre Label" style="position:relative; z-index:0;" /><img src="/label/fuel_f.png" style="position:absolute;top:0;left:0;z-index:1" /><img src="/label/wet_e.png" style="position:absolute;top:0;left:0;z-index:1" /><img src="/label/db_71.png" style="position:absolute;top:0;left:0;z-index:1" /><img src="/label/sw_2.png" style="position:absolute;top:0;left:0;z-index:1" /></div>');
-        $label = new TyreLabel('F', 'E', 71, 2, '280', '/label');
+        $tyre = new Tyre('F', 'E', 71, 2);
+        $label = new Label($tyre, '280', '/label');
         print $label->genHtmlLabel();
     }
 
     public function testCssTyreLabel()
     {
         $this->expectOutputString('<div class="tyre-label-container"><img src="/label/bg.png" alt="EU Tyre Label" class="tyre-label-base" /><img src="/label/fuel_f.png" class="tyre-label-overlay" /><img src="/label/wet_e.png" class="tyre-label-overlay" /><img src="/label/db_71.png" class="tyre-label-overlay" /><img src="/label/sw_2.png" class="tyre-label-overlay" /></div>');
-        $label = new TyreLabel('F', 'E', 71, 2, '280', '/label');
+        $tyre = new Tyre('F', 'E', 71, 2);
+        $label = new Label($tyre, '280', '/label');
         print $label->genCssLabel();
     }
 }
-*/
