@@ -80,7 +80,7 @@ class Label
             '<img src="%s/%s_%s.png" style="position:absolute;top:0;left:0;z-index:1" />',
             $this->images,
             $type,
-            $val
+            strtolower($val)
         );
     }
 
@@ -116,7 +116,7 @@ class Label
             '<img src="%s/%s_%s.png" class="tyre-label-overlay" />',
             $this->images_dir,
             $type,
-            $val
+            strtolower($val)
         );
     }
 
@@ -155,7 +155,7 @@ class Label
                 "%s/%s_%s.png",
                 $this->images_dir,
                 $type,
-                $val
+                strtolower($val)
             )
         );
 
