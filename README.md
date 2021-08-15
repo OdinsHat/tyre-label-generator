@@ -1,6 +1,12 @@
 # Tyre Label Generator
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Build Status](https://travis-ci.org/OdinsHat/tyre-label-generator.svg?branch=master)](https://travis-ci.org/OdinsHat/tyre-label-generator) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+# Important
+
+As of May 2021 the EU tyre label format is changing. This is known and development **will** be progressing as fast as possible to implement the changes. Please feel free to submit any PRs or make any suggesstions using the issues facility of Github.
+
+Many thanks for your patience. For the time being you can view details of the changes that are coming in the [following link](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0740) (scroll down to annex 1). You will also find the English documentation in the docs directory where I will also be placing all other EU languages documentation at a later date.
 
 ### Background
 
