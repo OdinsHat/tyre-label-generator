@@ -35,7 +35,9 @@ $config
         '@PhpCsFixer' => true,
         '@PhpCsFixer:risky' => true,
         'general_phpdoc_annotation_remove' => ['annotations' => ['expectedDeprecation']], // one should use PHPUnit built-in method instead
+        'strict_param' => true,
         'header_comment' => ['header' => $header],
+        '@PSR12' => true,
     ])
     ->setFinder($finder)
 ;

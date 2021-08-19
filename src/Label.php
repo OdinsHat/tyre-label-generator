@@ -17,6 +17,11 @@ namespace OdinsHat\TyreLabelGenerator;
  */
 class Label
 {
+    private string $wet;
+    private string $noise_db;
+    private string $sw;
+    private string $images_dir;
+
     protected $tyre;
     protected $height;
     protected $images;
@@ -147,8 +152,10 @@ class Label
     /**
      * Method used for building the over layed image by taking arguments for which
      * variables and thereby which images to use.
+     *
+     * @param mixed $image
      */
-    private function overlayGdImage(string $type, string $val, string $image)
+    private function overlayGdImage(string $type, string $val, $image)
     {
         $src = imagecreatefrompng(
             sprintf(

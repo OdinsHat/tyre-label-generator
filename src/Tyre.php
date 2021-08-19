@@ -12,8 +12,15 @@ declare(strict_types=1);
 namespace OdinsHat\TyreLabelGenerator;
 
 /**
- * The tyre class has all the values that represent the tyre required to build an EU standardised tyre label. This
- * object is given to the label class in order to create the tyre label.
+ * The tyre class has all the values that represent the tyre required to build an
+ * EU standardised tyre label. This object is given to the label class in
+ * order to create the tyre label.
+ *
+ * @category OdinsHat
+ *
+ * @author Doug Bromley <doug@tintophat.com>
+ * @copyright 2021 Doug Bromley
+ * @license https://github.com/OdinsHat/tyre-label-generator/blob/master/LICENSE
  */
 class Tyre
 {
