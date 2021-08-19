@@ -1,5 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is subject to the
+ * BSD 3 clause open source license.
+ * (c) Copyright Doug Bromley
+ */
+
 namespace OdinsHat\TyreLabelGenerator;
 
 /**
@@ -15,10 +23,6 @@ class Label
     /**
      * Constructor function for accepting a tyre object as well as 2 optional arguments for
      * customising the label as the user sees fit.
-     *
-     * @param Tyre $tyre
-     * @param int $height
-     * @param string $images
      */
     public function __construct(Tyre $tyre, int $height = 280, string $images = '/images')
     {
@@ -37,18 +41,18 @@ class Label
         return $this->height;
     }
 
-    public function setHeight(int $height)
+    public function setHeight(int $height): void
     {
         $this->height = $height;
     }
 
-    public function setImagesDir(string $images)
+    public function setImagesDir(string $images): void
     {
         $this->images = $images;
     }
 
     /**
-     * Generates a Tyre Label using inline CSS
+     * Generates a Tyre Label using inline CSS.
      *
      * This isn't the recommended method but it is the easiest if you want to
      * get a quick & dirty tyre label up.
@@ -110,6 +114,35 @@ class Label
         return $label;
     }
 
+    /**
+     * Generates a PNG label from the component parts found in the images directory.
+     */
+    public function genPngLabel()
+    {
+        $image = imagecreatefrompng(
+            sprintf(
+                '%s/bg.png',
+                $this->images_dir
+            )
+        );
+
+        $image = $this->overlayGdImage('fuel', $this->fuel, $image);
+        $image = $this->overlayGdImage('wet', $this->wet, $image);
+        $image = $this->overlayGdImage('db', $this->noise_db, $image);
+
+        return $this->overlayGdImage('sw', $this->sw, $image);
+    }
+
+    private function overlayHtmlImage($type, $val): string
+    {
+        return sprintf(
+            '<img src="%s/%s_%s.png" style="position:absolute;top:0;left:0;z-index:1" />',
+            $this->images,
+            $type,
+            strtolower($val)
+        );
+    }
+
     private function overlayCssImage(string $type, string $val): string
     {
         return sprintf(
@@ -121,38 +154,14 @@ class Label
     }
 
     /**
-     * Generates a PNG label from the component parts found in the images directory
-     */
-    public function genPngLabel()
-    {
-        $image = imagecreatefrompng(
-            sprintf(
-                "%s/bg.png",
-                $this->images_dir
-            )
-        );
-
-        $image = $this->overlayGdImage('fuel', $this->fuel, $image);
-        $image = $this->overlayGdImage('wet', $this->wet, $image);
-        $image = $this->overlayGdImage('db', $this->noise_db, $image);
-        $image = $this->overlayGdImage('sw', $this->sw, $image);
-
-        return $image;
-    }
-
-    /**
      * Method used for building the over layed image by taking arguments for which
-     * variables and thereby which images to use
-     *
-     * @param string $type
-     * @param string $val
-     * @param string $image
+     * variables and thereby which images to use.
      */
     private function overlayGdImage(string $type, string $val, string $image)
     {
         $src = imagecreatefrompng(
             sprintf(
-                "%s/%s_%s.png",
+                '%s/%s_%s.png',
                 $this->images_dir,
                 $type,
                 strtolower($val)
