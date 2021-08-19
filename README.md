@@ -39,6 +39,9 @@ cd tyre-label-generator
 phpunit tests/
 ```
 
+You can also run the composer scripts `analyze` and `fix` with the first being the Psalm (PHP-Stan on steroids) 
+and the second being PHPCSFixer.
+
 ## Usage
 
 There are multiple methods implemented in the class and you can use whichever suits yur needs most.
