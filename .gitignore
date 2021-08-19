@@ -7,3 +7,5 @@ themes/classic/views/
 node_modules
 .idea
 vendor/
+.php-cs-fixer.cache
+package-lock.json
