@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is subject to the 
+ * This file is subject to the
  * BSD 3 clause open source license.
  * (c) Copyright Doug Bromley
  */
