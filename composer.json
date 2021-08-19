@@ -40,5 +40,13 @@
       "tests/"
     ],
     "exclude-from-classmap": []
+  },
+  "scripts": {
+    "fix": [
+      "vendor/bin/php-cs-fixer fix"
+    ],
+    "analyze": [
+      "vendor/bin/psalm --show-info=false"
+    ]
   }
 }
