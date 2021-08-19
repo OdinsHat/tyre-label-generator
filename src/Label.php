@@ -78,16 +78,6 @@ class Label
         return $label;
     }
 
-    private function overlayHtmlImage($type, $val): string
-    {
-        return sprintf(
-            '<img src="%s/%s_%s.png" style="position:absolute;top:0;left:0;z-index:1" />',
-            $this->images,
-            $type,
-            strtolower($val)
-        );
-    }
-
     /**
      * Generates a tyre label using CSS classes - for this to work the
      * included CSS file must be linked in your page or the classes inside
