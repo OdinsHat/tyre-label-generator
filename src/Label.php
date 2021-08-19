@@ -72,7 +72,7 @@ class Label
         );
         $label .= $this->overlayHtmlImage('fuel', $this->tyre->getFuel());
         $label .= $this->overlayHtmlImage('wet', $this->tyre->getWet());
-        $label .= $this->overlayHtmlImage('db', $this->tyre->getNoiseDb());
+        $label .= $this->overlayHtmlImage('db', (string) $this->tyre->getNoiseDb());
         $label .= $this->overlayHtmlImage('sw', $this->tyre->getNoiseClass());
         $label .= '</div>';
 
@@ -98,7 +98,7 @@ class Label
         );
         $label .= $this->overlayCssImage('fuel', $this->tyre->getFuel());
         $label .= $this->overlayCssImage('wet', $this->tyre->getWet());
-        $label .= $this->overlayCssImage('db', $this->tyre->getNoiseDb());
+        $label .= $this->overlayCssImage('db', (string) $this->tyre->getNoiseDb());
         $label .= $this->overlayCssImage('sw', $this->tyre->getNoiseClass());
         $label .= '</div>';
 

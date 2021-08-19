@@ -15,31 +15,30 @@ class TyreLabelTest extends TestCase
 {
     public function testFilesExist()
     {
-        $dir = 'images';
-        $this->assertFileExists("$dir/fuel_a.png");
-        $this->assertFileExists("$dir/fuel_b.png");
-        $this->assertFileExists("$dir/fuel_c.png");
-        $this->assertFileExists("$dir/fuel_d.png");
-        $this->assertFileExists("$dir/fuel_e.png");
-        $this->assertFileExists("$dir/fuel_f.png");
-        $this->assertFileExists("$dir/fuel_g.png");
-        $this->assertFileExists("$dir/wet_a.png");
-        $this->assertFileExists("$dir/wet_b.png");
-        $this->assertFileExists("$dir/wet_c.png");
-        $this->assertFileExists("$dir/wet_d.png");
-        $this->assertFileExists("$dir/wet_e.png");
-        $this->assertFileExists("$dir/wet_f.png");
-        $this->assertFileExists("$dir/wet_g.png");
-        $this->assertFileExists("$dir/wet_a.png");
-        $this->assertFileExists("$dir/sw_0.png");
-        $this->assertFileExists("$dir/sw_1.png");
-        $this->assertFileExists("$dir/sw_2.png");
+        $this->assertFileExists(__DIR__ . "/../images/fuel_a.png");
+        $this->assertFileExists(__DIR__ . "/../images/fuel_b.png");
+        $this->assertFileExists(__DIR__ . "/../images/fuel_c.png");
+        $this->assertFileExists(__DIR__ . "/../images/fuel_d.png");
+        $this->assertFileExists(__DIR__ . "/../images/fuel_e.png");
+        $this->assertFileExists(__DIR__ . "/../images/fuel_f.png");
+        $this->assertFileExists(__DIR__ . "/../images/fuel_g.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_a.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_b.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_c.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_d.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_e.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_f.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_g.png");
+        $this->assertFileExists(__DIR__ . "/../images/wet_a.png");
+        $this->assertFileExists(__DIR__ . "/../images/sw_0.png");
+        $this->assertFileExists(__DIR__ . "/../images/sw_1.png");
+        $this->assertFileExists(__DIR__ . "/../images/sw_2.png");
     }
 
     public function testCorrectPathInserted()
     {
         $tyre = new Tyre('F', 'E', 71, 2);
-        $label = new Label($tyre, 280, '/blahlabelimages');
+        $label = new Label($tyre, "280", '/blahlabelimages');
         $this->assertStringContainsString('/blahlabelimages', $label->genCssLabel());
         $this->assertStringContainsString('/blahlabelimages', $label->genHtmlLabel());
     }

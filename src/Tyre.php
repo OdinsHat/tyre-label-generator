@@ -145,7 +145,7 @@ class Tyre
      */
     public function getNoiseClass(): string
     {
-        return $this->noiseClass;
+        return (string) $this->noiseClass;
     }
 
     /**
