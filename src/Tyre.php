@@ -1,7 +1,14 @@
 <?php
 
-namespace OdinsHat\TyreLabelGenerator;
+declare(strict_types=1);
 
+/*
+ * This file is subject to the 
+ * BSD 3 clause open source license.
+ * (c) Copyright Doug Bromley
+ */
+
+namespace OdinsHat\TyreLabelGenerator;
 
 /**
  * The tyre class has all the values that represent the tyre required to build an EU standardised tyre label. This
