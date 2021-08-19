@@ -3,9 +3,10 @@
 declare(strict_types=1);
 
 /*
- * This file is subject to the
- * BSD 3 clause open source license.
- * (c) Copyright Doug Bromley
+ * This file is part of Tyre Label Generator.
+ * (c) Doug Bromley <doug@tintophat.com>
+ * This source file is subject to the BSD license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace OdinsHat\TyreLabelGenerator;
@@ -76,16 +77,6 @@ class Label
         $label .= '</div>';
 
         return $label;
-    }
-
-    private function overlayHtmlImage($type, $val): string
-    {
-        return sprintf(
-            '<img src="%s/%s_%s.png" style="position:absolute;top:0;left:0;z-index:1" />',
-            $this->images,
-            $type,
-            strtolower($val)
-        );
     }
 
     /**

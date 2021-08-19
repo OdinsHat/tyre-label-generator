@@ -1,6 +1,6 @@
 {
   "name": "tyre-label-generator",
-  "version": "1.1",
+  "version": "1.2",
   "description": "A simple class for creating EU Tyre labels",
   "main": "index.js",
   "directories": {
@@ -31,13 +31,5 @@
   "bugs": {
     "url": "https://github.com/OdinsHat/tyre-label-generator/issues"
   },
-  "homepage": "https://github.com/OdinsHat/tyre-label-generator",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^1.3.2",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-phpcs": "^0.2.2",
-    "grunt-phplint": "0.0.5",
-    "grunt-phpmd": "^0.1.0"
-  }
+  "homepage": "https://github.com/OdinsHat/tyre-label-generator"
 }
